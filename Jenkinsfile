@@ -11,7 +11,7 @@ pipeline {
         GIT_BRANCH      = "main"
 
         // ✅ Here is where you fix your AWS Access Key
-        AWS_ACCESS_KEY_ID = "AKIATA24URFBZVZXIIVZ"
+        AWS_ACCESS_KEY_ID = "AKIATA24URFBR565XYET"
     }
 
     stages {
@@ -31,7 +31,7 @@ pipeline {
 
         stage('Login to AWS ECR') {
             steps {
-                // 🔒9ZXxx7GfhMQykdhL3iCI0Gxlp+WQF8SsrjBSNZCG
+                // 🔒Grgv7Vb34zOT1vTmLF66Bs4yTr3exju7UwMaa7XO
                 withCredentials([
                     string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY')
                 ]) {
@@ -62,3 +62,4 @@ pipeline {
         }
     }
 }
+
