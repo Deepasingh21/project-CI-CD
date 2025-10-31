@@ -7,7 +7,7 @@ pipeline {
         ECR_REPO_NAME = "my-repo"                  // 🔴 CHANGE: Your ECR repo name
         IMAGE_TAG = "latest"                              // 🔴 CHANGE: Desired tag
         GIT_REPO = "https://github.com/Deepasingh21/project-CI-CD.git" // 🔴 CHANGE: Your GitHub repo
-        EC2_INSTANCE_ID = "i-0b158c79d8a4dab44"           // 🔴 CHANGE: Your EC2 instance ID
+        EC2_INSTANCE_ID = "i-08c6058e4487aa4d6"           // 🔴 CHANGE: Your EC2 instance ID
         AWS_CREDENTIALS_ID = "Access_ID"           // 🔴 CHANGE: Your Jenkins AWS credentials ID
     }
 
@@ -75,4 +75,5 @@ pipeline {
         }
     }
 }
+
 
