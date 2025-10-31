@@ -7,7 +7,7 @@ pipeline {
         ECR_REPO_NAME   = "my-repo"
         IMAGE_TAG       = "latest"
         GIT_REPO        = "https://github.com/Deepasingh21/project-CI-CD.git"
-        EC2_INSTANCE_ID = "i-08c6058e4487aa4d6"
+        EC2_INSTANCE_ID = "i-0b158c79d8a4dab44"
         AWS_CREDENTIALS_ID = "Access_ID"    // <-- set this to your Jenkins AWS credentials ID
     }
 
@@ -112,3 +112,4 @@ done
         }
     }
 }
+
