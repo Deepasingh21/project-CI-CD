@@ -57,8 +57,9 @@ REPO="${ECR_REPO_NAME}"
 TAG="${IMAGE_TAG}"
 INSTANCE="${EC2_INSTANCE_ID}"
 
-# Build the commands as a JSON array so SSM receives them cleanly
-read -r -d '' CMD_ARR <<'EOF'
+# Build the commands as a JSON array so SSM receives them cleanly.
+# Use a here-doc to populate CMD_ARR (POSIX-safe).
+CMD_ARR=$(cat <<EOF
 [
   "aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${ACCOUNT}.dkr.ecr.${REGION}.amazonaws.com",
   "docker pull ${ACCOUNT}.dkr.ecr.${REGION}.amazonaws.com/${REPO}:${TAG}",
@@ -67,6 +68,7 @@ read -r -d '' CMD_ARR <<'EOF'
   "docker run -d --name my_app_container -p 80:80 ${ACCOUNT}.dkr.ecr.${REGION}.amazonaws.com/${REPO}:${TAG}"
 ]
 EOF
+)
 
 CMDID=$(aws ssm send-command \
   --instance-ids "${INSTANCE}" \
