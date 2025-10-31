@@ -3,12 +3,12 @@ pipeline {
 
     environment {
         AWS_REGION = "us-east-1"                          // 🔴 CHANGE: Your AWS region
-        ECR_ACCOUNT_ID = "207963326787"                   // 🔴 CHANGE: Your AWS Account ID
-        ECR_REPO_NAME = "my-erc-repo-01"                  // 🔴 CHANGE: Your ECR repo name
+        ECR_ACCOUNT_ID = "136549279537"                   // 🔴 CHANGE: Your AWS Account ID
+        ECR_REPO_NAME = "my-repo"                  // 🔴 CHANGE: Your ECR repo name
         IMAGE_TAG = "latest"                              // 🔴 CHANGE: Desired tag
         GIT_REPO = "https://github.com/Deepasingh21/project-CI-CD.git" // 🔴 CHANGE: Your GitHub repo
-        EC2_INSTANCE_ID = "i-0f99a5d4fd5f288d7"           // 🔴 CHANGE: Your EC2 instance ID
-        AWS_CREDENTIALS_ID = "aws-credentials-id"           // 🔴 CHANGE: Your Jenkins AWS credentials ID
+        EC2_INSTANCE_ID = "i-0b158c79d8a4dab44"           // 🔴 CHANGE: Your EC2 instance ID
+        AWS_CREDENTIALS_ID = "Access_ID"           // 🔴 CHANGE: Your Jenkins AWS credentials ID
     }
 
     stages {
@@ -75,3 +75,4 @@ pipeline {
         }
     }
 }
+
